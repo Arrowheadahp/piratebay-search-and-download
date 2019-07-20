@@ -11,22 +11,15 @@ def soupcreate(url):
 
 def geturl():
     proxylist=soupcreate('https://piratebay-proxylist.se/')
-
-    #proxy=proxylist.find('tr',{'class':'odd'})
-
-    #proxyurl=proxy.get('data-probe')
-
+    
     proxy=proxylist.find('td',{'class':'url'})
     proxyurl=proxy.get('data-href')
-
+    
     return (proxyurl)
 
     
-
-
-
 if __name__=='__main__':
-    #print (geturl())
+    print (geturl())
     webbrowser.open(geturl())
 
 

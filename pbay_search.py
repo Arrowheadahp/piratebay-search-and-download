@@ -51,8 +51,11 @@ def get_input(torlist,curl=geturl()):
 if __name__=='__main__':
     curl=geturl()
     query=input('Enter Query: ')
-    torlist=crawlresult(psearch(curl,query))
-    get_input(torlist,curl)
+    while query:
+        torlist=crawlresult(psearch(curl,query))
+        get_input(torlist,curl)
+        query=input('Enter Query: ')
+        
     
     
     
